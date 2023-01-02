@@ -13,7 +13,8 @@ namespace ecommercesite.Modals
         public decimal Discount { get; set;}
         public int Quantity { get; set;}
         public string ImageURL { get; set; }
-        public string ExpDate { get; set; }
+        public DateTime ExpDate { get; set; }
+        public int Status { get; set; }
 
     }
 }

@@ -9,7 +9,8 @@
         public string Password { get; set;}
         public string Username { get; set;}
         public decimal Funds { get; set; }
-        public int Type { get; set; }
-        public string Statues { get; set; }
+        public string Type { get; set; }
+        public int Status { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }
