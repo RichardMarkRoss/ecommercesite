@@ -23,10 +23,40 @@ namespace ecommercesite.Controllers
         public Response register(Users users) { 
             Response response = new Response();
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("EItemCS").ToString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("itemsdb").ToString());
             response = dal.register(users, connection);
             return response;
+        }
 
+        [HttpPost]
+        [Route("login")]
+        public Response login(Users users) 
+        {            
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("itemsdb").ToString());
+            Response response = new Response();
+            response = dal.login(users, connection);
+            return response;
+        }
+
+        [HttpPost]
+        [Route("viewUser")]
+        public Response viewUser(Users users)
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("itemsdb").ToString());
+            Response response = dal.viewUser(users, connection);
+            return response;
+        }
+
+        [HttpPost]
+        [Route("updateProfile")]
+        public Response updateProfile(Users users)
+        {
+            DAL dal = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("itemsdb").ToString());
+            Response response = dal.updateProfile(users, connection);
+            return response;
         }
     }
 }
