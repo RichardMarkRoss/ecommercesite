@@ -25,7 +25,7 @@ namespace ecommercesite.Controllers
         Public Response addUpdateItems(Items item)
         {
             DAL dal = new DAL();
-            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("itemsdb").toString());
+            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
             Response response = dal.addUpdateItems(item, connection);
             return response;
         }
@@ -35,7 +35,7 @@ namespace ecommercesite.Controllers
         Public Response userList(Items item)
         {
             DAL dal = new DAL();
-            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("itemsdb").toString());
+            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
             Response response = dal.userList(item, connection);
             return response;
         }
