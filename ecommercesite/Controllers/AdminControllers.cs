@@ -6,10 +6,8 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using ecommercesite.Modals;
 
-
 namespace ecommercesite.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class AdminController : ControllerBase

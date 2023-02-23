@@ -8,7 +8,6 @@ using ecommercesite.Modals;
 
 namespace ecommercesite.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class ItemsController : ControllerBase
@@ -22,29 +21,29 @@ namespace ecommercesite.Controllers
 
         [HttpPost]
         [Route("addToCart")]
-        Public Response addToCart(Cart cart) {
+        public Response addToCart(Cart cart) {
             DAL dal = new DAL();
-            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
             Response response = dal.addToCart(cart, connection);
             return response;
         }
 
         [HttpPost]
         [Route("placeOrder")]
-        Public Response placeOrder(Users user)
+        public Response placeOrder(Users user)
         {
             DAL dal = new DAL();
-            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
             Response response = dal.placeOrder(user, connection);
             return response;
         }
 
         [HttpPost]
         [Route("orderList")]
-        Public Response orderList(Users user)
+        public Response orderList(Users user)
         {
             DAL dal = new DAL();
-            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
             Response response = dal.orderList(user, connection);
             return response;
         }
