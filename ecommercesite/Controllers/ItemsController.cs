@@ -23,7 +23,7 @@ namespace ecommercesite.Controllers
         [Route("addToCart")]
         public Response addToCart(Cart cart) {
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
             Response response = dal.addToCart(cart, connection);
             return response;
         }
@@ -33,7 +33,7 @@ namespace ecommercesite.Controllers
         public Response placeOrder(Users user)
         {
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
             Response response = dal.placeOrder(user, connection);
             return response;
         }
@@ -43,7 +43,7 @@ namespace ecommercesite.Controllers
         public Response orderList(Users user)
         {
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
             Response response = dal.orderList(user, connection);
             return response;
         }

@@ -231,7 +231,7 @@ namespace ecommercesite.Modals
         public Response userList(Items item, SqlConnection connection)
         {
             Response response = new Response();
-            List<Users> listUsers = new List<Orders>();
+            List<Users> listUsers = new List<Users>();
             SqlDataAdapter da = new SqlDataAdapter("sp_UserList", connection);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.AddWithValue("@Type", item.Type);
