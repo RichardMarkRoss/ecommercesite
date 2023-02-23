@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using ecommercesite.Modals;
 
 namespace ecommercesite.Controllers
 {
@@ -15,7 +16,7 @@ namespace ecommercesite.Controllers
 
         public UsersController(IConfiguration configuration)
         {
-            _configuration= configuration;
+            _configuration = configuration;
         }
 
         [HttpPost]

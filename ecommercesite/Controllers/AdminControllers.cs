@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-using UsersController.Modals;
+using ecommercesite.Modals;
+
 
 namespace ecommercesite.Controllers
 {
@@ -19,23 +20,25 @@ namespace ecommercesite.Controllers
         {
             _configuration = configuration;
         }
-        
+
         [HttpPost]
         [Route("addUpdateItems")]
-        Public Response addUpdateItems(Items item)
+        public Response addUpdateItems(Items item)
         {
             DAL dal = new DAL();
-            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
             Response response = dal.addUpdateItems(item, connection);
             return response;
         }
 
         [HttpPost]
         [Route("userList")]
-        Public Response userList(Items item)
+        public Response userList(Users users)
         {
             DAL dal = new DAL();
-            sqlConnection connection = new sqlConnection(_configuration.GetConnectionString("Itemsdb").toString());
-            Response response = dal.userList(item, connection);
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
+            Response response = dal.viewUser(users, connection);
             return response;
         }
+    }
+}

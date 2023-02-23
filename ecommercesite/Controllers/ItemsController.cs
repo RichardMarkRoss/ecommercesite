@@ -4,14 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-using UsersController.Modals;
+using ecommercesite.Modals;
 
 namespace ecommercesite.Controllers
 {
 
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class ItemsController : ControllerBase
     {
         private readonly IConfiguration _configuration;
 
