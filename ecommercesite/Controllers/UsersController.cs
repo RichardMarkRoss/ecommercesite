@@ -24,7 +24,7 @@ namespace ecommercesite.Controllers
         public Response register(Users users) { 
             Response response = new Response();
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ItemsdbLocal").ToString());
             response = dal.register(users, connection);
             return response;
         }
@@ -34,7 +34,7 @@ namespace ecommercesite.Controllers
         public Response login(Users users) 
         {            
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ItemsdbLocal").ToString());
             Response response = new Response();
             response = dal.login(users, connection);
             return response;
@@ -45,7 +45,7 @@ namespace ecommercesite.Controllers
         public Response viewUser(Users users)
         {
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ItemsdbLocal").ToString());
             Response response = dal.viewUser(users, connection);
             return response;
         }
@@ -55,7 +55,7 @@ namespace ecommercesite.Controllers
         public Response updateProfile(Users users)
         {
             DAL dal = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Itemsdb").ToString());
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ItemsdbLocal").ToString());
             Response response = dal.updateProfile(users, connection);
             return response;
         }
